@@ -40,7 +40,7 @@ class SHTC3:
         temperature, humidity = None, None
 
         self._write_command(_SHTC3_READ_TEMP_HUMID)
-        await asyncio.sleep_ms(10)
+        await asyncio.sleep_ms(15)
         buf = self._i2c.readfrom(_SHTC3_ADDR, 6)
 
         temp_data = buf[0:2]
